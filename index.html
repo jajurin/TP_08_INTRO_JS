@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Edad</title>
+</head>
+<body>
+  <h1>Calculadora de Edad</h1>
+
+  <label for="nombre">Nombre: </label>
+  <input type="text" id="nombre"><br><br>
+
+  <label for="fecha">Fecha de nacimiento (YYYY-MM-DD): </label>
+  <input type="date" id="fecha"><br><br>
+
+  <button onclick="calcularEdadUsuario()">Calcular Edad</button>
+
+  <h1>Buscador de Frutas</h1>
+
+  <label for="fruta">Ingresa una fruta: </label>
+  <input type="text" id="fruta"><br><br>
+
+  <button onclick="buscarFrutaUsuario()">Buscar Fruta</button>
+
+  <h1>Comparando Datos y Tipos</h1>
+
+  <button onclick="compararDatos()">Ejecutar Comparaciones</button>
+
+  <h1>Ejercicio: Objeto Ciudad</h1>
+
+  <button id="btnHacerEjercicio">Hacer Ejercicio</button>
+
+  <div id="resultado" style="margin-top:20px; font-weight:bold; color:blue;"></div>
+
+  <script src="utils.js"></script>
+  
+  <script src="Ejercicios.js"></script>
+</body>
+</html>

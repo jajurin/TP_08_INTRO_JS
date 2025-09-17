@@ -65,10 +65,10 @@ function calcularEdadUsuario() {
     console.log(mensaje);
   }
   function hacerEjercicioCiudad() {
-    // Limpiar resultados anteriores
+
     document.getElementById('resultado').innerHTML = '';
 
-    // **Ejercicio:** Crear el objeto ciudad
+
     const ciudad = {
         nombre: "Buenos Aires",
         fechaFundacion: "1536-02-02",
@@ -80,5 +80,106 @@ function calcularEdadUsuario() {
     mostrarObjeto(ciudad);
 }
 
+
   
+function doblar() {
+
+  const input = document.getElementById("numeros").value;
+
+
+  const array = input.split(",").map(num => Number(num));
+
+
+  const duplicados = array.map(num => num * 2);
+
+
+  document.getElementById("resultado").textContent = "Resultado: [" + duplicados.join(", ") + "]";
+}
+function dibujarTriangulo() {
   
+
+  mostrarEnDOM("*");
+  mostrarEnDOM("**");
+  mostrarEnDOM("***");
+  mostrarEnDOM("****");
+  mostrarEnDOM("*****");
+
+
+  console.log("*\n**\n***\n****\n*****");
+
+  mostrarEnDOM("----*----");
+  mostrarEnDOM("---***---");
+  mostrarEnDOM("--*****--");
+  mostrarEnDOM("-*******-");
+  mostrarEnDOM("*********");
+
+
+  console.log("----*----\n---***---\n--*****--\n-*******-\n*********");
+}
+function filtrarNombres() {
+
+  document.getElementById('resultado').innerHTML = "";
+
+
+  const input = prompt("Ingresa una lista de nombres separados por coma:");
+
+
+
+  const nombres = input.split(",");
+
+  const nombresConA = nombres.filter(nombre => nombre[0]?.toUpperCase() === 'A');
+
+  if (nombresConA.length === 0) {
+      mostrarEnDOM("No hay nombres que empiecen con la letra A.");
+  } else {
+      mostrarEnDOM("Nombres que empiezan con A:");
+      nombresConA.forEach(nombre => mostrarEnDOM(nombre));
+  }
+}
+function reemplazarPalabra() {
+  
+  document.getElementById('resultado').innerHTML = "";
+
+
+  const texto = prompt("Ingresa una cadena de texto:");
+
+
+  const palabraOriginal = prompt("Ingresa la palabra que deseas reemplazar:");
+
+
+  const palabraNueva = prompt("Ingresa la palabra de reemplazo:");
+  
+
+
+  const resultado = texto.replaceAll(palabraOriginal, palabraNueva);
+
+
+  mostrarEnDOM("Texto original: " + texto);
+  mostrarEnDOM("Texto modificado: " + resultado);
+}
+
+function mostrarSubcadena() {
+
+  document.getElementById('resultado').innerHTML = "";
+
+  const texto = prompt("Ingresa una cadena de texto:");
+
+
+  const numero = prompt("Ingresa un número:");
+
+
+
+  const numeroNuevo = Number(numero);
+
+  if (isNaN(n) || n < 0) {
+      mostrarEnDOM("El número ingresado no es válido.");
+      return;
+  }
+
+
+  const resultado = texto.slice(0, numeroNuevo);
+
+ 
+  mostrarEnDOM("Cadena original: " + texto);
+  mostrarEnDOM("Primeros " + n + " caracteres: " + resultado);
+}

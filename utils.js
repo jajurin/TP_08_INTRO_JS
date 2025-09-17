@@ -33,10 +33,8 @@ function mostrarEnDOM(contenido) {
 function mostrarObjeto(obj) {
     for (let clave in obj) {
         if (obj.hasOwnProperty(clave)) {
-            mostrarEnDOM(`Clave: ${clave}`);
-            mostrarEnDOM(`Valor: ${obj[clave]}`);
+            mostrarEnDOM(` ${clave} : `);
+            mostrarEnDOM(` ${obj[clave]}`);
         }
     }
 }
-
-  

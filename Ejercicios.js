@@ -28,7 +28,7 @@ function calcularEdadUsuario() {
     if (buscarFruta(fruta)) {
       mensaje = `Sí, tenemos ${fruta}!`;
     } else {
-      mensaje = `No, no tenemos ${fruta}!`;
+      mensaje = `No, no tenemos ${fruta} ñieri!`;
     }
   
  
@@ -171,7 +171,7 @@ function mostrarSubcadena() {
 
   const numeroNuevo = Number(numero);
 
-  if (isNaN(n) || n < 0) {
+  if (isNaN(numeroNuevo) || (numeroNuevo < 0 )|| numeroNuevo>texto.length) {
       mostrarEnDOM("El número ingresado no es válido.");
       return;
   }
@@ -181,5 +181,59 @@ function mostrarSubcadena() {
 
  
   mostrarEnDOM("Cadena original: " + texto);
-  mostrarEnDOM("Primeros " + n + " caracteres: " + resultado);
+  mostrarEnDOM("Primeros " + numeroNuevo + " caracteres: " + resultado);
+}
+
+function stringConSeparador() {
+
+  document.getElementById("resultado").innerHTML = "";
+
+
+  const input = prompt("Ingresa una lista de elementos separados por coma:");
+
+  if (!input) {
+    mostrarEnDOM("No ingresaste nada esta vez.");
+    return;
+  }
+
+  const array = input.split(",");
+
+
+  const resultado = array.join(" - ");
+
+
+  mostrarEnDOM("Resultado dado: " + resultado);
+}
+
+function calcularRecaudacion() {
+
+  document.getElementById("resultado").innerHTML = "";
+
+
+  const input = prompt('Ingresa los pedidos asi "nombre:total", separados por coma.');
+
+  if (!input) {
+    mostrarEnDOM("No ingresaste nada denuevo.");
+    return;
+  }
+
+
+  const pedidos = input.split(",");
+
+  let total = 0;
+
+
+  pedidos.forEach(pedido => {
+
+    const [nombre, monto] = pedido.split(":");
+
+    const valor = parseFloat(monto);
+
+    if (!isNaN(valor)) {
+      total += valor;
+    }
+  });
+
+
+  mostrarEnDOM("Recaudación total: " + total.toFixed(2));
 }
